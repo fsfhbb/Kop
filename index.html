@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="th"><head>
+  <meta charset="UTF-8">
+  <title>PENGUINFREE PANEL V2.1</title>
+  <style>
+    body {
+      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      color: white;
+    }
+    .panel {
+      background: #111;
+      border: 2px solid #ff0;
+      box-shadow: 0 0 20px #ff0;
+      border-radius: 10px;
+      padding: 25px;
+      width: 360px;
+      box-sizing: border-box;
+      margin: 40px auto;
+    }
+    h2 {
+      color: #ff0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .checkbox {
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+    }
+    .checkbox input {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    input[type=range], input[type=password] {
+      width: 100%;
+      margin-top: 5px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ff0;
+      background: #000;
+      color: white;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px;
+      background: #ff0;
+      border: none;
+      color: black;
+      font-weight: bold;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+    }
+    #mainPanel { display: none; }
+    #loginPanel {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      width: 360px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="panel" id="loginPanel">
+  <h2>พาแนลสุดกาก</h2>
+  <label>ใส่รหัสเข้าของกาก:</label>
+  <input type="password" id="password" placeholder="ใส่รหัส...">
+  <button class="btn" onclick="login()">เข้าสู่ระบบของกาก</button>
+</div>
+
+<div class="panel" id="mainPanel">
+  <h2>ของกากๆV2.1</h2>
+
+  
+    <label>ระดับความดูด</label>
+    <select style="width:100%;padding:6px;border-radius:5px;margin-bottom:10px;background:#000;color:white;border:1px solid #ff0;">
+      <option>สูง</option>
+      <option>ต่ำ</option>
+      <option>ปกติ</option>
+    </select>
+
+    <label>เลือกรุ่นมือถือ</label>
+    <select style="width:100%;padding:6px;border-radius:5px;margin-bottom:10px;background:#000;color:white;border:1px solid #ff0;">
+      <option>Android</option>
+      <option>iOS</option>
+    </select>
+
+    <div class="checkbox"><input type="checkbox">AIMBOT 90%มโน</div>
+    
+  <div class="checkbox"><input type="checkbox">ช่วยลาก 90%มโน</div>
+  <div class="checkbox"><input type="checkbox">กระสุนตรง 20%มโน</div>
+  <div class="checkbox"><input type="checkbox">จอไวทัชลื่นคิดไปเองพวกควย</div>
+  <div class="checkbox"><input type="checkbox">กันแบนกันรายงานกันพ่อกันแม่มึงไม่เจาะไฟล์เกมจะโดนได้ไงควย</div>
+
+  <label style="margin-top:15px;">ความไวจอ (10-30000)</label>
+  <input type="range" min="10" max="300" value="150">
+
+  <button class="btn" onclick="alert('ตั้งค่าสำเร็จ!')">✅ ยืนยันตั้งค่า</button>
+</div>
+
+<script>
+  function login() {
+    const code = document.getElementById("password").value;
+    if (code === "") {
+      document.getElementById("loginPanel").style.display = "none";
+      document.getElementById("mainPanel").style.display = "block";
+    } else {
+      alert("รหัสไม่ถูกต้อง!");
+    }
+  }
+</script>
+
+
+
+</body></html>
